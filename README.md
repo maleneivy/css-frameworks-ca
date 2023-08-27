@@ -1,2 +1,2 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+My social media application is about sharing cooking ideas, and I have named it iCookToday. 
