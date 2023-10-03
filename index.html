@@ -14,17 +14,16 @@
         <div class="container-fluid text-center mb-5">
 
             <img src="/logo/logo.png" class="img-fluid my-5" alt="logo">
-            <form action="/profile/index.html" class="needs-validation bg-light rounded p-4 m-auto text-start"
-                style="max-width:600px">
+            <form action="/profile/index.html" id="log-in-form"
+                class="needs-validation bg-light rounded p-4 m-auto text-start" style="max-width:600px">
                 <div class="mb-3">
                     <h1 class="mb-4">Log in</h1>
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        required>
+                    <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" pattern=".{8,}"
+                    <input type="password" class="form-control" id="userPassword" pattern=".{8,}"
                         title="Password must be at least 8 characters or more" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Log in</button>
@@ -37,7 +36,7 @@
         <div class="footer-copyright text-center py-4">© 2023 Copyright: iCookToday
         </div>
     </footer>
-
+    <script src="/js/logIn.js" type="module"></script>
 </body>
 
 </html>
