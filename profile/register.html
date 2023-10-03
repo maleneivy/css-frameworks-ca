@@ -16,22 +16,24 @@
     <main>
         <div class="container-fluid text-center">
             <img src="/logo/logo.png" class="img-fluid my-5" alt="logo">
-            <form action="/profile/index.html" class="needs-validation bg-light rounded p-4 m-auto text-start"
+            <form id="register-user-form" action="https://api.noroff.dev/social/auth/register" method="post"
+                class="needs-validation bg-light rounded p-4 m-auto text-start" enctype="multipart/form-data"
                 style="max-width:600px">
                 <h1 class="mb-4">Sign up</h1>
                 <div class="input-group mb-4">
-                    <span class="input-group-text">First and last name</span>
-                    <input type="text" aria-label="First name" class="form-control" required>
-                    <input type="text" aria-label="Last name" class="form-control" required>
+                    <span class="input-group-text">Username</span>
+                    <input type="text" id="userName" name="name" aria-label="username" class="form-control"
+                        pattern=".{3,}" title="Username must be at least 3 characters or more" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        required>
+                    <input type="email" name="email" id="userEmail" class="form-control" aria-describedby="emailHelp"
+                        title="Noroff mail is required" required>
+
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" pattern=".{8,}"
+                    <input type="password" name="password" id="userPassword" class="form-control" pattern=".{8,}"
                         title="Password must be at least 8 characters or more" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Sign up</button>
@@ -45,6 +47,7 @@
         </div>
     </footer>
 
+    <script src="/js/register.js" type="module"></script>
 </body>
 
 </html>
