@@ -22,11 +22,14 @@ export async function fetchAllPosts(url, options = {
 
             const title = json[i].title;
             const media = json[i].media;
+            const id = json[i].id;
 
+            // Create HTML - container
             const postsContainer = document.querySelector(".postsContainer");
 
             // PostCard
-            const postCard = document.createElement("div");
+            const postCard = document.createElement("a");
+            postCard.href = `/posts/specificPost.html?id=${id}`;
             postCard.classList.add(
                 "card",
                 "col-sm-12",

@@ -6,17 +6,26 @@ body {
 }
 
 .navbar .nav-link.active {
-    background-color: #606C5D;
+    background-color: #f1c376;
     color: $light !important;
     border-radius: 0.5rem;
 }
 
 .navbar .nav-link:hover {
-    background-color: #606c5d7b;
+    background-color: #f1c376;
     border-radius: 0.5rem;
 }
 
 .card-img-top {
     height: 300px;
     object-fit: cover;
+}
+
+.specific-post-container {
+    background: $light;
+}
+
+.fa-solid {
+    color: $primary;
+    font-size: 1.8rem;
 }
