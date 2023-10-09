@@ -30,7 +30,7 @@ document.getElementById("register-user-form").addEventListener("submit", async f
         password: userPassword,
     };
 
-    const registerUserURL = `${API_BASE_URL}/api/v1/social/auth/register`;
+    const registerUserURL = `${API_BASE_URL}/social/auth/register`;
     await registerUser(registerUserURL, userData);
 });
 
