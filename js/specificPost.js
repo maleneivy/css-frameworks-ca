@@ -8,7 +8,7 @@ const postId = urlParams.get("id");
 async function specificPost() {
     try {
 
-        const specificPostUrl = `${API_BASE_URL}/api/v1/social/posts/${postId}?_author=true`;
+        const specificPostUrl = `${API_BASE_URL}/social/posts/${postId}?_author=true`;
 
         const fetchSpecificPost = {
             method: "GET",

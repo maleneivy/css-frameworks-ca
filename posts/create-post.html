@@ -59,34 +59,35 @@
     </header>
 
     <main>
-
         <div class="container mt-5 mb-5">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Create a new recipe
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <form id="new-post-form">
-                                <div class="mb-3">
-                                    <label for="postTitle" class="form-label">New Recipe</label>
-                                    <input type="text" class="form-control" id="postTitleInput" name="title"
-                                        placeholder="Title">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="postBody" class="form-label">How to</label>
-                                    <textarea class="form-control" id="postBodyInput" name="body" rows="3"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-                            </form>
+            <div class="row">
+                <h1>Create new recipe</h1>
+                <div class="col mt-3">
+                    <form id="new-post-form">
+                        <div class="mb-3">
+                            <label for="postImage" class="form-label">New Recipe</label>
+                            <input type="text" class="form-control" id="postImageInput" name="media"
+                                placeholder="Place an URL for your image or video here">
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="postTitle" class="form-label">New Recipe</label>
+                            <input type="text" class="form-control" id="postTitleInput" name="title"
+                                placeholder="Title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="postBody" class="form-label">How to</label>
+                            <textarea class="form-control" id="postBodyInput" name="body" rows="7"
+                                placeholder="Maximum 280 characters"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="postTag" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="postTagsInput" name="tags"
+                                placeholder="Example: soup">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -100,6 +101,7 @@
         crossorigin="anonymous"></script>
 
     <script src="/js/components/logOutButton.mjs" type="module"></script>
+    <script src="/js/createPost.js" type="module"></script>
 </body>
 
 </html>

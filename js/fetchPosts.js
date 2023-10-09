@@ -2,7 +2,7 @@ import { API_BASE_URL } from "./settings/baseUrl.mjs";
 import { token } from "./utils/storage.mjs";
 
 // all-posts-container
-export const postsURL = `${API_BASE_URL}/api/v1/social/posts`;
+export const postsURL = `${API_BASE_URL}/social/posts`;
 
 
 export async function fetchAllPosts(url, options = {
