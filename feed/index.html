@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.typekit.net/qak2cvg.css">
     <link rel="stylesheet" href="https://use.typekit.net/ivw6zyg.css">
+    <script src="https://kit.fontawesome.com/a1cf958ea2.js" crossorigin="anonymous"></script>
     <link href="../dist/css/index.css" rel="stylesheet">
     <title>CSS Frameworks Course Assignement - Social Media Application</title>
 </head>
@@ -24,19 +25,29 @@
                     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/profile/index.html">My
-                                    Profile</a>
+                                <a href="/posts/create-post.html" class="nav-link me-3">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active me-3" aria-current="page" href="/feed/index.html">Feed</a>
+                                <a class="nav-link active me-3" aria-current="page" href="/feed/index.html">
+                                    <i class="fa-solid fa-house"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-3" aria-current="page" href="/profile/index.html">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
                             </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        <form class="d-flex text-center" role="search">
+                            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search"
                                 style="width:200px">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <button class="btn btn-outline-success me-3" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </form>
-                        <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 xm-mt-3 md-ms-4 mb-lg-0">
                             <li><button id="logOutButton" type="submit" class="btn btn-primary">Log
                                     out</button></li>
                         </ul>
@@ -46,35 +57,8 @@
         </form>
     </header>
 
-    <main>
-        <div class="container mt-5">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Create a new recipe
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput" class="form-label">New Recipe</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">How to</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+    <main>
         <div class="container mt-5 text-center">
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
@@ -87,10 +71,10 @@
                             <option value="pizza">Pizza</option>
                             <option value="fish">Fish</option>
                         </select>
-                        <div class="all-posts-container">
+                        <div class="postsContainer row justify-content-center">
 
                         </div>
-                        <div class="card col-sm-4 col-xs-2 col-md-5 m-1 p-0" value="soup">
+                        <div class="card  col-sm-4 col-xs-2 col-md-5 m-1 p-0" value="soup">
                             <img src="../images/flat-lay-homemade-soup-broccoli-spinach.jpg" class="card-img-top"
                                 alt="...">
                             <div class="card-body">

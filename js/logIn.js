@@ -40,7 +40,7 @@ document.getElementById("log-in-form").addEventListener("submit", async function
         password: userPassword,
     };
 
-    const logInUserURL = `${API_BASE_URL}/api/v1/social/auth/login`;
+    const logInUserURL = `${API_BASE_URL}/social/auth/login`;
     await logInUser(logInUserURL, userData);
 });
 
