@@ -4,7 +4,6 @@ import { token } from "./utils/storage.mjs";
 // all-posts-container
 export const postsURL = `${API_BASE_URL}/social/posts`;
 
-
 export async function fetchAllPosts(url, options = {
     method: "GET",
     headers: {
@@ -13,19 +12,21 @@ export async function fetchAllPosts(url, options = {
     },
 }) {
     try {
-        const fetchOptions = options;
+        const fetchOptions = options; ''
         const response = await fetch(url, fetchOptions);
         const json = await response.json();
         console.log(json)
+
+        let postTags = [];
+
+        // Get container.
+        const postsContainer = document.querySelector(".postsContainer");
 
         for (let i = 0; i < json.length; i++) {
 
             const title = json[i].title;
             const media = json[i].media;
             const id = json[i].id;
-
-            // Create HTML - container
-            const postsContainer = document.querySelector(".postsContainer");
 
             // PostCard
             const postCard = document.createElement("a");
@@ -74,7 +75,38 @@ export async function fetchAllPosts(url, options = {
 
             // Append the postCard to the PostsContainer
             postsContainer.appendChild(postCard);
+
+            // Concat this post's list of tags with the rest.
+            let tags = json[i].tags;
+            postTags = postTags.concat(tags);
         }
+
+        // Replace empty tag strings with 'Uncategorized'.
+        postTags = postTags.map((tag) => {
+            if (tag === "") {
+                return "Uncategorized";
+            }
+
+            return tag;
+        });
+
+        // Remove duplicate tags and sort them.
+        postTags = [...new Set(postTags)].sort()
+
+        // Insert the tags into the <select>.
+        const selectTagFormContainer = document.querySelector(".form-select");
+        postTags.forEach(tag => {
+            const selectOption = document.createElement("option");
+            selectOption.setAttribute = "value";
+            selectOption.value = `${tag}`;
+            selectOption.textContent = `${tag}`;
+
+            selectTagFormContainer.appendChild(selectOption);
+        });
+
+        selectTagFormContainer.addEventListener("change", (e) => {
+            console.log(selectTagFormContainer.value)
+        });
 
     } catch (error) {
         console.log(error)
@@ -82,3 +114,8 @@ export async function fetchAllPosts(url, options = {
 }
 
 fetchAllPosts(postsURL);
+
+/*
+            // filter posts
+
+*/

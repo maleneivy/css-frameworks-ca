@@ -8,8 +8,6 @@ const postId = urlParams.get("id");
 const postIdUrl = `${API_BASE_URL}/social/posts/${postId}`;
 const editFormContainer = document.querySelector("#edit-post-form");
 
-//get the content of the post
-
 async function getValues(postIdUrl, options = {
     method: "GET",
     headers: {
@@ -75,46 +73,3 @@ async function editPost(newMedia, newTitle, newBody, newTags) {
         console.log("put request", error)
     }
 }
-
-
-/*
-
-async function editPost(media, title, body, tags) {
-
-    const postData = JSON.stringify({ title: title, body: body, tags: tags, media: media });
-
-    const postOptions = {
-        method: "PUT",
-        body: postData,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        }
-    }
-
-    try {
-        const response = await fetch(postIdUrl, postOptions);
-        const json = await response.json();
-        console.log(response)
-        console.log(json)
-
-    } catch (error) {
-        console.log(error)
-    }
-
-}
-
-*/
-
-/*
-editFormContainer.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const media = editImage.value;
-    const title = editTitle.value;
-    const body = editBody.value;
-    const tags = [editTags.value];
-
-    editPost(media, title, body, tags);
-});
-*/
