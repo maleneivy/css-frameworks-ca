@@ -41,7 +41,7 @@ async function createPost(titleValue, postBodyValue, postTagsValue, postImageVal
         console.log(response)
         console.log(json)
 
-        if (json.ok) {
+        if (response.ok) {
             console.log("Success!")
         }
         else {
