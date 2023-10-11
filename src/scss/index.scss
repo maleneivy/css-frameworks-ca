@@ -29,3 +29,17 @@ body {
     color: $primary;
     font-size: 1.8rem;
 }
+
+.message {
+    padding: 5px;
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.error-message {
+    background-color: #f19292;
+}
+
+.success-message {
+    background-color: #c5eeb8;
+}

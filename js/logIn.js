@@ -1,3 +1,4 @@
+import { displayMessage } from "./components/displayMessage.mjs";
 import { API_BASE_URL } from "./settings/baseUrl.mjs";
 
 
@@ -22,7 +23,7 @@ async function logInUser(url, userData) {
 
             window.location.href = "/profile/index.html";
         } else {
-            // display ErrorMessage with reusable errormessage
+            displayMessage("error-message", "Username or password is wrong", ".message");
         }
     } catch (error) {
         console.log(error);
@@ -43,8 +44,5 @@ document.getElementById("log-in-form").addEventListener("submit", async function
     const logInUserURL = `${API_BASE_URL}/social/auth/login`;
     await logInUser(logInUserURL, userData);
 });
-
-
-// Can I make anything reusable? 
 
 
