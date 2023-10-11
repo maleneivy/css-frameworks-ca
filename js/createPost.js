@@ -45,6 +45,7 @@ async function createPost(titleValue, postBodyValue, postTagsValue, postImageVal
 
         if (response.ok) {
             displayMessage("success-message", `The post was successfully uploaded`, messageContainerId);
+
         } else if (jsonErrors) {
             clearMessages(messageContainerId);
             jsonErrors.forEach((errorMessage) => {

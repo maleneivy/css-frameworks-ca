@@ -1,3 +1,4 @@
+import { displayMessage } from "./components/displayMessage.mjs";
 import { API_BASE_URL } from "./settings/baseUrl.mjs";
 import { token } from "./utils/storage.mjs";
 
@@ -19,7 +20,6 @@ async function getValues(postIdUrl, options = {
         const fetchOptions = options;
         const response = await fetch(postIdUrl, fetchOptions);
         const json = await response.json();
-        console.log(json)
 
         const media = document.querySelector("#editImage");
         const title = document.querySelector("#editTitle");
@@ -67,8 +67,13 @@ async function editPost(newMedia, newTitle, newBody, newTags) {
     try {
         const response = await fetch(postIdUrl, editOptions);
         const json = await response.json();
-        console.log(response)
-        console.log(json)
+
+        if (response.ok) {
+            displayMessage("success-message", "The post is successfully edited.", ".message");
+        } else {
+            displayMessage("error-message", "Something went wrong", ".message");
+        }
+
     } catch (error) {
         console.log("put request", error)
     }
