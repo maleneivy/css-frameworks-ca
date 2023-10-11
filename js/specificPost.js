@@ -23,7 +23,6 @@ async function specificPost() {
 
         const specificPost = await response.json();
 
-        console.log(specificPost);
 
         // Create HTML
         const specificPostContainer = document.querySelector(".specific-post-container");
