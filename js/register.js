@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./settings/baseUrl.mjs";
+import { displayMessage } from "./components/displayMessage.mjs";
 
 async function registerUser(url, userData) {
     try {
@@ -11,6 +12,16 @@ async function registerUser(url, userData) {
         };
         const response = await fetch(url, postData);
         const json = await response.json();
+        console.log(response)
+        console.log(json)
+
+        const jsonErrors = json.errors;
+
+        if (jsonErrors) {
+            jsonErrors.forEach((errorMessage) => {
+                displayMessage("error-message", errorMessage.message, ".message");
+            });
+        }
 
     } catch (error) {
         console.log(error);

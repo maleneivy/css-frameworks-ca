@@ -21,7 +21,7 @@ export async function deletePost(postId) {
 
         if (response.ok) {
             window.location.href = "/feed/index.html";
-            alert("Post was deleted successfully!");
+            alert("The post was deleted successfully!");
         } else {
             displayMessage("error-message", "Something went wrong", ".message")
         }

@@ -6,8 +6,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const postId = urlParams.get("id");
 
+
 const postIdUrl = `${API_BASE_URL}/social/posts/${postId}`;
 const editFormContainer = document.querySelector("#edit-post-form");
+const goToPostContainer = document.querySelector("#go-to-post-by-id");
+const saveButton = document.querySelector("#save-post-button");
 
 async function getValues(postIdUrl, options = {
     method: "GET",
@@ -67,9 +70,21 @@ async function editPost(newMedia, newTitle, newBody, newTags) {
     try {
         const response = await fetch(postIdUrl, editOptions);
         const json = await response.json();
+        console.log(json)
 
         if (response.ok) {
             displayMessage("success-message", "The post is successfully edited.", ".message");
+
+            saveButton.style.display = "none";
+            const postId = json.id;
+            let postLink = document.createElement("a");
+            postLink.href = `/posts/specificPost.html?id=${postId}`;
+            postLink.textContent = "Go to post";
+            goToPostContainer.appendChild(postLink);
+            goToPostContainer.classList.add(
+                "mt-2"
+            )
+
         } else {
             displayMessage("error-message", "Something went wrong", ".message");
         }

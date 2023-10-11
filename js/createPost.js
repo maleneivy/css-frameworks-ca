@@ -9,6 +9,8 @@ const formBody = document.querySelector("#postBodyInput");
 const formTags = document.querySelector("#postTagsInput");
 const formImage = document.querySelector("#postImageInput");
 const messageContainerId = "#message-container";
+const goToPostContainer = document.querySelector("#go-to-post-by-id");
+const saveButton = document.querySelector("#save-post-button");
 
 
 createPostContainer.addEventListener("submit", (e) => {
@@ -42,9 +44,19 @@ async function createPost(titleValue, postBodyValue, postTagsValue, postImageVal
         const response = await fetch(createPostsUrl, postOptions);
         const json = await response.json();
         const jsonErrors = json.errors;
+        const postId = json.id;
+        console.log(response);
+        console.log(json)
 
         if (response.ok) {
             displayMessage("success-message", `The post was successfully uploaded`, messageContainerId);
+
+            createPostContainer.reset();
+            saveButton.style.display = "none";
+            let postLink = document.createElement("a");
+            postLink.href = `/posts/specificPost.html?id=${postId}`;
+            postLink.textContent = "Go to post";
+            goToPostContainer.appendChild(postLink);
 
         } else if (jsonErrors) {
             clearMessages(messageContainerId);
