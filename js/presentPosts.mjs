@@ -35,7 +35,7 @@ export function presentPosts(posts) {
         );
 
         if (media === "" || media === null) {
-            postImage.src = "/images/flat-lay-homemade-soup-broccoli-spinach.jpg";
+            postImage.src = "/images/default-img/default-post-image.jpg";
         } else {
             postImage.src = media;
         }
