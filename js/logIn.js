@@ -17,9 +17,11 @@ async function logInUser(url, userData) {
             const json = await response.json();
             const userEmail = userData.email;
             const accessToken = json.accessToken;
+            const userName = json.name;
 
             localStorage.setItem("accessToken", accessToken);
-            localStorage.setItem("loggedInUser:", userEmail);
+            localStorage.setItem("email", userEmail);
+            localStorage.setItem("userName", userName);
 
             window.location.href = "/profile/index.html";
         } else {

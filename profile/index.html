@@ -51,46 +51,15 @@
     </header>
 
     <main>
+        <div class="message m-5 text-center"></div>
         <div class="container mt-5">
-            <div class="row">
-                <img src="../images/default-img/default-profile-image.jpg" class="img-fluid col-4 rounded-circle">
-                <div class="flex-d col-2">
-                    <p>151</p>
-                    <p>Recipes</p>
-                </div>
-                <div class="flex-d col-2">
-                    <p>1200</p>
-                    <p>Followers</p>
-                </div>
-                <div class="flex-d col-2">
-                    <p>1300</p>
-                    <p>Follows</p>
-                </div>
+            <p class=""><i class="fa-solid fa-heart pe-3" style="font-size:1.5rem"></i>
+                Follow this chef </p>
+            <div class="row text-center">
+                <div id="profile-picture-container"></div>
+                <div id="profile-name-container"></div>
+                <div id="profile-counts-container"></div>
             </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <p>Malene Ivy</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p>Some information some information</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                        aria-selected="true">Recipes</button>
-                </li>
-                <li class="nav-item m-auto" role="presentation">
-                    <p class="mb-0"><i class="fa-solid fa-heart pe-3" style="font-size:1.5rem"></i>
-                        Follow this chef </p>
-                </li>
-            </ul>
         </div>
 
 
@@ -124,6 +93,7 @@
         crossorigin="anonymous"></script>
 
     <script src="/js/components/logOutButton.mjs" type="module"></script>
+    <script src="/js/myProfile.js" type="module"></script>
 </body>
 
 </html>
