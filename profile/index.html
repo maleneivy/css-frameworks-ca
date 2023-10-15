@@ -25,20 +25,23 @@
                     <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active me-3" aria-current="page" href="/profile/index.html">My
-                                    Profile</a>
+                                <a href="/posts/create-post.html" class="nav-link me-3">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-3" aria-current="page" href="/feed/index.html">Feed</a>
+                                <a class="nav-link me-3" aria-current="page" href="/feed/index.html">
+                                    <i class="fa-solid fa-house"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active me-3" aria-current="page" href="/profile/index.html">
+                                    <i class="fa-solid fa-user"></i>
+                                </a>
                             </li>
                         </ul>
-                        <form class="d-flex text-center" role="search">
-                            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search"
-                                style="width:200px">
-                            <button class="btn btn-outline-success me-3" type="submit">Search</button>
-                        </form>
                         <ul class="navbar-nav me-auto mb-2 xm-mt-3 md-ms-4 mb-lg-0">
-                            <li><button action="../index.html" type="submit" class="btn btn-primary">Log
+                            <li><button id="logOutButton" type="submit" class="btn btn-primary">Log
                                     out</button></li>
                         </ul>
                     </div>
@@ -48,83 +51,34 @@
     </header>
 
     <main>
+        <div class="message m-5 text-center"></div>
         <div class="container mt-5">
-            <div class="row">
-                <img src="../images/profile.png" class="img-fluid col-4 rounded-circle">
-                <div class="flex-d col-2">
-                    <p>151</p>
-                    <p>Recipes</p>
-                </div>
-                <div class="flex-d col-2">
-                    <p>1200</p>
-                    <p>Followers</p>
-                </div>
-                <div class="flex-d col-2">
-                    <p>1300</p>
-                    <p>Follows</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <p>Malene Ivy</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p>Some information some information</p>
-                </div>
+            <p class=""><i class="fa-solid fa-heart pe-3" style="font-size:1.5rem"></i>
+                Follow this chef </p>
+            <div class="row text-center">
+                <div id="profile-picture-container"></div>
+                <div id="profile-name-container"></div>
+                <div id="profile-counts-container"></div>
             </div>
         </div>
-        <div class="container">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                        aria-selected="true">Recipes</button>
-                </li>
-                <li class="nav-item m-auto" role="presentation">
-                    <p class="mb-0"><i class="fa-solid fa-heart pe-3" style="font-size:1.5rem"></i>
-                        Follow this chef </p>
-                </li>
 
-            </ul>
+
+        <div class="container mt-5 text-center">
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
                     tabindex="0">
                     <div class="row justify-content-center">
-                        <div class="card col-5 m-1 p-0">
-                            <img src="../images/flat-lay-homemade-soup-broccoli-spinach.jpg" class="card-img-top"
-                                alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Title</p>
-                            </div>
-                        </div>
-                        <div class="card col-5 m-1 p-0">
-                            <img src="../images/flat-lay-winter-squash-soup-bowl-held-by-hands.jpg" class="card-img-top"
-                                alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Title</p>
-                            </div>
-                        </div>
-                        <div class="card col-5 m-1 p-0">
-                            <img src="../images/pexels-cup-of-couple-8471700.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Title</p>
-                            </div>
-                        </div>
-                        <div class="card col-5 m-1 p-0">
-                            <img src="../images/pexels-dana-tentis-262959.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <p class="card-text">Title</p>
-                            </div>
+                        <div class="postsContainer row justify-content-center">
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
+
     </main>
+
+
+
 
     <footer class="page-footer font-small fixed-bottom bg-light">
         <div class="footer-copyright text-center py-4">© 2023 Copyright: iCookToday
@@ -137,6 +91,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
         crossorigin="anonymous"></script>
+
+    <script src="/js/components/logOutButton.mjs" type="module"></script>
+    <script src="/js/myProfile.js" type="module"></script>
 </body>
 
 </html>

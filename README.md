@@ -18,6 +18,3 @@ Logged in user can:
 * Sass 1.66.1
 
 * [Trello](https://trello.com/invite/b/4w8m0HFl/ATTIe54214c0d4a9985ab146d06e96b4ec2eFA849528/js2-ca-development) for planning the progress of the CA.
-
-
-
