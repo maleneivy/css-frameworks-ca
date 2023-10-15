@@ -1,7 +1,12 @@
 import { displayMessage } from "./components/displayMessage.mjs";
 import { API_BASE_URL } from "./settings/baseUrl.mjs";
 
-
+/**
+ * Logs in a user by sending a POST request with user data to the specified URL.
+ *
+ * @param {string} url - The URL for the login request.
+ * @param {Object} userData - The user data to be sent for login, including email and password.
+ */
 async function logInUser(url, userData) {
     try {
         const postData = {
@@ -46,5 +51,3 @@ document.getElementById("log-in-form").addEventListener("submit", async function
     const logInUserURL = `${API_BASE_URL}/social/auth/login`;
     await logInUser(logInUserURL, userData);
 });
-
-

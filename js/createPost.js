@@ -2,7 +2,6 @@ import { API_BASE_URL } from "./settings/baseUrl.mjs";
 import { token } from "./utils/storage.mjs";
 import { clearMessages, displayMessage } from "./components/displayMessage.mjs";
 
-
 const createPostContainer = document.querySelector("#new-post-form");
 const formTitle = document.querySelector("#postTitleInput");
 const formBody = document.querySelector("#postBodyInput");
@@ -11,7 +10,6 @@ const formImage = document.querySelector("#postImageInput");
 const messageContainerId = "#message-container";
 const goToPostContainer = document.querySelector("#go-to-post-by-id");
 const saveButton = document.querySelector("#save-post-button");
-
 
 createPostContainer.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -25,7 +23,14 @@ createPostContainer.addEventListener("submit", (e) => {
     createPost(titleValue, postBodyValue, postTagsValue, postImageValue);
 });
 
-
+/**
+ * Creates a new post and uploads it to the server.
+ *
+ * @param {string} titleValue - The title of the post.
+ * @param {string} postBodyValue - The body content of the post.
+ * @param {string[]} postTagsValue - An array of tags associated with the post.
+ * @param {string} postImageValue - The URL of the post's image or media.
+ */
 async function createPost(titleValue, postBodyValue, postTagsValue, postImageValue) {
     const createPostsUrl = `${API_BASE_URL}/social/posts`;
 
@@ -69,12 +74,3 @@ async function createPost(titleValue, postBodyValue, postTagsValue, postImageVal
         displayMessage("error-message", "Something went wrong", messageContainerId);
     }
 };
-
-/*
-https://i.postimg.cc/tRV6W8sy/mango-catfish-taco-2944558-1280.jpg
-
-Proin ac vulputate ante, eget elementum nisl. Vestibulum sagittis quam tempus, interdum libero quis, semper mauris. Suspendisse molestie est nec auctor consequat.
-
-Phasellus auctor scelerisque nibh, sit amet dignissim elit rutrum eget. Etiam volutpat laoreet cursus. Mauris tincidunt nunc eu velit euismod, imperdiet vehicula ante luctus. Nunc et vehicula metus. Praesent ut venenatis quam. Phasellus vel sapien nisi. Nullam faucibus sapien eu felis tincidunt, vitae elementum ante euismod. Suspendisse potenti. Proin porttitor quam vitae gravida tristique. Nulla facilisi.
-
-*/

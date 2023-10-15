@@ -1,6 +1,9 @@
 import { presentPosts } from "./presentPosts.mjs";
 import { fetchPosts } from "./fetchPosts.mjs";
 
+/**
+ * Fetches and presents all posts, sets up tag filtering, and handles tag-based post retrieval.
+ */
 export async function setupTagsAndPosts() {
     // Fetch all posts.
     let posts = await fetchPosts(null);

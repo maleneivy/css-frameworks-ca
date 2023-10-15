@@ -2,6 +2,11 @@ import { API_BASE_URL } from "./settings/baseUrl.mjs";
 import { token } from "./utils/storage.mjs";
 import { displayMessage } from "./components/displayMessage.mjs";
 
+/**
+ * Deletes a post with the specified ID from the server.
+ *
+ * @param {string} postId - The ID of the post to be deleted.
+ */
 export async function deletePost(postId) {
 
     const postIdUrl = `${API_BASE_URL}/social/posts/${postId}`;

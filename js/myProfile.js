@@ -5,10 +5,10 @@ import { token, userName } from "./utils/storage.mjs";
 
 
 // Present username on profile
-// GET request
-// API + /social/profiles/<name>
-
-// Get single profile 
+// Get single profile
+/**
+ * Fetches and displays user data including posts, followers, and following status for the currently logged-in user.
+ */
 async function getMyUserData() {
     const url = `${API_BASE_URL}/social/profiles/${userName}?_posts=true?_followers=true?_following=true`;
 
@@ -40,6 +40,11 @@ async function getMyUserData() {
 getMyUserData();
 
 // Present userProfile
+/**
+ * Presents the user profile data including avatar, name, and counts for posts, followers, and following.
+ *
+ * @param {Object} json - The user profile data in JSON format.
+ */
 function presentUserProfile(json) {
 
     // Profile Image - get the avatar
@@ -138,6 +143,9 @@ function presentUserProfile(json) {
 
 
 // Get users posts
+/**
+ * Fetches and presents posts for the user's profile.
+ */
 async function getUserPosts() {
     const postsUrl = `${API_BASE_URL}/social/profiles/${userName}/posts`;
     try {
@@ -167,4 +175,5 @@ async function getUserPosts() {
         console.log(error)
     }
 }
+
 getUserPosts();

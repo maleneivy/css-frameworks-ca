@@ -6,12 +6,19 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const postId = urlParams.get("id");
 
-
 const postIdUrl = `${API_BASE_URL}/social/posts/${postId}`;
 const editFormContainer = document.querySelector("#edit-post-form");
 const goToPostContainer = document.querySelector("#go-to-post-by-id");
 const saveButton = document.querySelector("#save-post-button");
 
+/**
+ * Fetches data from the server and populates input fields with retrieved values.
+ *
+ * @param {string} postIdUrl - The URL to fetch data from.
+ * @param {Object} [options] - Optional options for the fetch request.
+ * @param {string} [options.method="GET"] - The HTTP method for the fetch request.
+ * @param {Object} [options.headers] - Additional headers for the request.
+ */
 async function getValues(postIdUrl, options = {
     method: "GET",
     headers: {
@@ -38,6 +45,7 @@ async function getValues(postIdUrl, options = {
         console.log(error);
     }
 }
+
 getValues(postIdUrl);
 
 // EditForm
@@ -54,9 +62,15 @@ editFormContainer.addEventListener("submit", (e) => {
 });
 
 // EditPost function
-
+/**
+ * Edits an existing post with new data and updates it on the server.
+ *
+ * @param {string} newMedia - The URL of the updated post's image or media.
+ * @param {string} newTitle - The updated title of the post.
+ * @param {string} newBody - The updated body content of the post.
+ * @param {string} newTags - An array of updated tags associated with the post.
+ */
 async function editPost(newMedia, newTitle, newBody, newTags) {
-
     const postData = JSON.stringify({ title: newTitle, body: newBody, tags: newTags, media: newMedia });
     const editOptions = {
         method: "PUT",

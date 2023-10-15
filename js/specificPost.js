@@ -6,9 +6,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const postId = urlParams.get("id");
 
+/**
+ * Fetches and presents a specific post with detailed information, including the author, title, date, and body.
+ */
 async function specificPost() {
     try {
-
         const specificPostUrl = `${API_BASE_URL}/social/posts/${postId}?_author=true`;
 
         const fetchSpecificPost = {
