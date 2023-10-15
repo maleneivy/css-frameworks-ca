@@ -1,3 +1,9 @@
+/**
+ * Filters and displays cards in the DOM based on a search query.
+ *
+ * @param {string} searchValue - The search query entered by the user.
+ */
+
 async function searchFilter(searchValue) {
     // Get all card elements.
     const postsContainer = document.querySelector(".postsContainer");

@@ -1,3 +1,8 @@
+/**
+ * Presents a list of posts in the DOM.
+ *
+ * @param {Array} posts - An array of post objects to be presented.
+ */
 export function presentPosts(posts) {
     // Get container and clear it.
     const postsContainer = document.querySelector(".postsContainer");

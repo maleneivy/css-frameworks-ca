@@ -1,6 +1,12 @@
 import { API_BASE_URL } from "./settings/baseUrl.mjs";
 import { displayMessage } from "./components/displayMessage.mjs";
 
+/**
+ * Registers a new user by sending a POST request with user registration data to the specified URL.
+ *
+ * @param {string} url - The URL for the registration request.
+ * @param {Object} userData - The user registration data.
+ */
 async function registerUser(url, userData) {
     try {
         const postData = {
@@ -22,7 +28,6 @@ async function registerUser(url, userData) {
                 displayMessage("error-message", errorMessage.message, ".message");
             });
         }
-
     } catch (error) {
         console.log(error);
     }
@@ -44,6 +49,3 @@ document.getElementById("register-user-form").addEventListener("submit", async f
     const registerUserURL = `${API_BASE_URL}/social/auth/register`;
     await registerUser(registerUserURL, userData);
 });
-
-// What to do next here:
-// Need to fix error messages, redirecting when registration was successful.
